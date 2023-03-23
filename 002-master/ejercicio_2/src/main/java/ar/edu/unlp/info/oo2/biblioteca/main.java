@@ -3,9 +3,9 @@ package ar.edu.unlp.info.oo2.biblioteca;
 public class main {
 	public static void main(String args[])  //static method  
 	{  
-		VoorheesExporter exporter=new VoorheesExporter();
-		
+		JsonAdapter exporter=new JsonAdapter();
 		Biblioteca biblioteca = new Biblioteca();
+		biblioteca.setExporter(exporter);
 		Socio socio1;
 		Socio socio2;
 		Socio socio3;

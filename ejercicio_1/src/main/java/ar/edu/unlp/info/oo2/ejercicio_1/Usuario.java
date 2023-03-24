@@ -28,4 +28,5 @@ public class Usuario {
 	public String getScreenName() {
 		return screenName;
 	}
+	
 }

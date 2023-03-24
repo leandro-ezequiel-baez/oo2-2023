@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Twitter {
 	
-	private HashSet<Usuario> listaDeUsuarios=new HashSet<Usuario>(); 
+	private List<Usuario> listaDeUsuarios=new LinkedList<Usuario>();
 	
 	
 	
@@ -11,10 +11,13 @@ public class Twitter {
 		borrarUsuario(user);
 	}
 	
-	public void darDeAltaUsuario(String screenName) {
-		listaDeUsuarios.add(crearUsuario(screenName));
+	public void darDeAltaUsuario(Usuario user) {
+		if(listaDeUsuarios.stream().map(Usuario::getScreenName).toString()==user.getScreenName()) {
+			listaDeUsuarios.add(crearUsuario(user));
+		}else {
+			System.out.println("usuarios repetido");
+		}
 	}
-	
 	private Usuario crearUsuario(String screenName) {
 		return (new Usuario(screenName));
 	}

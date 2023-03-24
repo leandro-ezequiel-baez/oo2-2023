@@ -8,7 +8,7 @@ import org.json.simple.JSONObject;
 import netscape.javascript.JSObject;
 
 
-public class ExporterAdapter implements VoorheesExporter {
+public class ExporterAdapter extends VoorheesExporter {
 	
 	private JSONObject exportar(Socio socio) {
 		JSONObject js=new JSONObject();

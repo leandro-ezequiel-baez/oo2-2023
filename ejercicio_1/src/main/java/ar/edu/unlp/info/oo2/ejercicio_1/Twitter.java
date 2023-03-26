@@ -1,29 +1,47 @@
 package ar.edu.unlp.info.oo2.ejercicio_1;
+import java.text.BreakIterator;
 import java.util.*;
 
 public class Twitter {
 	
-	private List<Usuario> listaDeUsuarios=new LinkedList<Usuario>();
+	private List<Usuario> listaDeUsuarios;
 	
+	public Twitter() {
+		listaDeUsuarios=new ArrayList<Usuario>();
+	}
 	
-	
-	public void darDeBajaUsuario(Usuario user) {
-		borrarUsuario(user);
+	public boolean darDeBajaUsuario(Usuario user) {
+		if(listaDeUsuarios.isEmpty()) {
+			System.out.println("lista vacia");
+			return false;
+		}else {
+		listaDeUsuarios.stream().forEach((p)->{
+			if(p.equals(user)) {
+				System.out.println("esta cuenta se eliminara");
+				listaDeUsuarios.remove(user);
+				//eliminar tweets
+				
+			}
+			else {
+				System.out.println("no existe");
+				
+			}
+		});return false;}
 	}
 	
 	public void darDeAltaUsuario(Usuario user) {
-		if(listaDeUsuarios.stream().map(Usuario::getScreenName).toString()==user.getScreenName()) {
-			listaDeUsuarios.add(crearUsuario(user));
+		if(listaDeUsuarios.isEmpty()) {
+			listaDeUsuarios.add(user);
+			System.out.println("Se agrego");
 		}else {
-			System.out.println("usuarios repetido");
-		}
-	}
-	private Usuario crearUsuario(String screenName) {
-		return (new Usuario(screenName));
-	}
-	
-	private boolean borrarUsuario(Usuario user) {
-		//toDo
-		return true;
+		listaDeUsuarios.stream().forEach((p)->{
+			if(p.equals(user)) {
+				System.out.println("repetido");
+			}
+			else {
+				listaDeUsuarios.add(user);
+				System.out.println("Se agrego");
+			}
+		});}
 	}
 }

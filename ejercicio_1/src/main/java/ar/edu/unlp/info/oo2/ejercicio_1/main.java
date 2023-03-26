@@ -5,14 +5,18 @@ public class main {
 	{  
 		Twitter twitter= new Twitter();
 		Usuario user1=new Usuario("lean");
-		Usuario user2=new Usuario("lean");
+		Usuario user2=new Usuario("juan");
 		
-		twitter.darDeBajaUsuario(user1);
+		Tweet tweet1=new Tweet("");
+		Tweet tweet2=new Tweet("asdf",tweet1);
+		
+		user1.postear(tweet1);
+		user1.postear(tweet2);
 		
 		twitter.darDeAltaUsuario(user1);
-		twitter.darDeAltaUsuario(user2);
+		//twitter.darDeAltaUsuario(user2);
 		
-		twitter.darDeBajaUsuario(user1);		
+		System.out.println(twitter.darDeBajaUsuario(user1));//true si lo borra		
 		
 	}
 }

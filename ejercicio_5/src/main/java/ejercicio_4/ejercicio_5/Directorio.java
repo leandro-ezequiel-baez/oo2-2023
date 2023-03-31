@@ -1,20 +1,26 @@
 package ejercicio_4.ejercicio_5;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Directorio {
+public class Directorio extends FileSystem{
 	
+	 private List<FileSystem> contenido;
+	 private static int tamano=32;
 	 private String nombre;
 	 private LocalDate fecha;
 	
 	 public Directorio(String nombre, LocalDate fecha) {
+		 contenido=new ArrayList<FileSystem>();
 		 this.nombre=nombre;
 		 this.fecha=fecha;
 	 }
 	 
 	 //toDo
 	 public int tamanoTotalOcupado() {
-		 return 1;
+		 return contenido.stream().mapToInt(actual->
+		 actual.getTamano()).sum();
 	 }
 	 
 	 /**
@@ -22,7 +28,7 @@ public class Directorio {
 	 * filesystem contenido por directorio receptor
 	 */
 	 public Archivo archivoMasGrande(){
-		 return ;
+		 getTamano();
 	 }
 	 
 	 /**
@@ -32,4 +38,14 @@ public class Directorio {
 	 public Archivo archivoMasNuevo() {
 	        	 
 	 }
+	 
+	 public boolean isComposite() {
+		 return true;
+	 }
+
+	public int getTamano() {
+		return tamano;
+	}
+	 
+	 
 }

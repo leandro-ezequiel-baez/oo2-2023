@@ -13,4 +13,10 @@ public class Archivo {
 		this.fecha=fecha;
 		this.tamano=tamano;
 	}
+
+	public int getTamano() {
+		return tamano;
+	}
+	
+	
 }

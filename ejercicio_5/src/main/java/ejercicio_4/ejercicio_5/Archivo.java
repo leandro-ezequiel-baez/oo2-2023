@@ -1,22 +1,21 @@
 package ejercicio_4.ejercicio_5;
 
-import java.time.LocalDate;
-
-public class Archivo {
+public class Archivo extends FileSystem {
 	
-	private String nombre;
-	private LocalDate fecha;
-	private int tamano;
-	
-	public Archivo (String nombre, LocalDate fecha, int tamano) {
-		this.nombre=nombre;
-		this.fecha=fecha;
-		this.tamano=tamano;
+	public Archivo (String name, int size) {
+		super(name,size);
 	}
 
-	public int getTamano() {
-		return tamano;
+	@Override
+	protected Object laMasGrande() {
+		return this;
 	}
+
+	@Override
+	public Archivo archivoMasNuevo() {
+		return this;
+	}
+
 	
 	
 }

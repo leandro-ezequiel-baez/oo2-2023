@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio_6;
 
-public class Planta extends Strategy{
+public class Planta extends TemplateMethod{
 	private int antiguedad;
 	private boolean casado;
 	

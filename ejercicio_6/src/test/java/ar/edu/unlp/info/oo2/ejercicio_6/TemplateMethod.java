@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio_6;
 
-public abstract class Strategy {
+public abstract class TemplateMethod {
 	private int cantidad;
 	
 	public abstract double basico();

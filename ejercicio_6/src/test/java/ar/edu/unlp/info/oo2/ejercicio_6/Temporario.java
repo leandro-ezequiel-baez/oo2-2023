@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio_6;
 
-public class Temporario extends Strategy {
+public class Temporario extends TemplateMethod {
 
 	private int horasExtras;
 	private boolean casado;

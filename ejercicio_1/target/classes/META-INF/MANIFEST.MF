@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< Updated upstream
 Built-By: leandro-pc
 Build-Jdk: 17.0.4.1
+=======
+Built-By: leandro.baez
+Build-Jdk: 17.0.5
+>>>>>>> Stashed changes
 Created-By: Maven Integration for Eclipse
 

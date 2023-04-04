@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Directorio extends FileSystem{
+<<<<<<< Updated upstream
 
 	private List<FileSystem> contenido;
 
@@ -32,6 +33,46 @@ public class Directorio extends FileSystem{
 	public int getSize() {
 		return super.getSize()+ (this.contenido.stream().mapToInt(a -> a.getSize()).sum());
 	}
+=======
+	
+	 private List<FileSystem> contenido;
+	 private static int tamano=32;
+	 private String nombre;
+	 private LocalDate fecha;
+	
+	 public Directorio(String nombre, LocalDate fecha) {
+		 contenido=new ArrayList<FileSystem>();
+		 this.nombre=nombre;
+		 this.fecha=fecha;
+	 }
+	 
+	 //toDo
+	 public int tamanoTotalOcupado() {
+		 return contenido.stream().mapToInt(actual->
+		 actual.getTamano()).sum();
+
+	 }
+	 
+	 /**
+	 * Retorna el archivo con mayor cantidad de bytes en cualquier nivel del 
+	 * filesystem contenido por directorio receptor
+	 */
+	 public Archivo archivoMasGrande(){
+		 
+	 }
+	 
+	 /**
+	 * Retorna el archivo con fecha de creación más reciente en cualquier nivel 
+	 * del filesystem contenido por directorio receptor.
+	 */
+	 public Archivo archivoMasNuevo() {
+	        	 
+	 }
+	 
+	 public boolean isComposite() {
+		 return true;
+	 }
+>>>>>>> Stashed changes
 
 	public int getTamano() {
 		return getSize();

@@ -5,8 +5,7 @@ public abstract class  State {
 	protected ToDoItem tarea;
 	
 	
-	public State(ToDoItem tarea) {
-		this.tarea=tarea;
+	public State() {		
 	}
 	
 	protected ToDoItem getTarea() {
@@ -19,6 +18,9 @@ public abstract class  State {
 	public abstract void start();	
 	public abstract void togglePause();
 	public abstract void finish();
-	public abstract void addComment(String comment);
+	
+	public void addComment(String comment) {
+		this.getTarea().setComentario(comment);
+	};
 }
 

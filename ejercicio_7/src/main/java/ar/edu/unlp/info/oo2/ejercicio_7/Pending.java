@@ -2,20 +2,18 @@ package ar.edu.unlp.info.oo2.ejercicio_7;
 
 public class Pending extends State{
 
-	public Pending(ToDoItem tarea) {
-		super(tarea);
-		
+	public Pending() {		
 	}
 
 	@Override
 	public void start() {
-		this.getTarea().setEstado(new InProgress (this.getTarea()));
+		this.getTarea().setEstado(new InProgress ());
 		
 	}
 
 	@Override
 	public void togglePause() {
-		// TODO Auto-generated method stub
+		throw new RuntimeException("El objeto ToDoItem no se encuentra en pause o in-progress");
 		
 	}
 
@@ -24,11 +22,4 @@ public class Pending extends State{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public void addComment(String comment) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
